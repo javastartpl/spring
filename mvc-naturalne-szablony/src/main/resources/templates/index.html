@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria zdjęć</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}" href="../static/styles/main.css">
+</head>
+<body>
+<div class="container">
+    <h1>Galeria zdjęć</h1>
+    <img alt="galeria sztuki" th:src="@{/images/gallery.png}" src="../static/images/gallery.png">
+<!--    <p th:each="pic: ${pictures }">-->
+<!--        <a th:href="@{|/pic?id=${pic.id}|}" th:text="${pic.title}" href="#">Przykładowe zdjęcie 1</a>-->
+<!--    </p>-->
+<!--    <p th:remove="all">-->
+<!--        <a href="#">Przykładowe zdjęcie 2</a>-->
+<!--    </p>-->
+<!--    <p th:remove="all">-->
+<!--        <a href="#">Przykładowe zdjęcie 3</a>-->
+<!--    </p>-->
+<!--    <p th:remove="all">-->
+<!--        <a href="#">Przykładowe zdjęcie 4</a>-->
+<!--    </p>-->
+    <div th:remove="all-but-first">
+        <p th:each="pic: ${pictures }">
+            <a th:href="@{|/pic?id=${pic.id}|}" th:text="${pic.title}" href="#">Przykładowe zdjęcie 1</a>
+        </p>
+        <p>
+            <a href="#">Przykładowe zdjęcie 2</a>
+        </p>
+        <p>
+            <a href="#">Przykładowe zdjęcie 3</a>
+        </p>
+        <p>
+            <a href="#">Przykładowe zdjęcie 4</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${picture.title}">Zdjęcie testowe</title>
+    <link rel="stylesheet" th:href="@{/styles/main.css}">
+</head>
+<body>
+<div class="container">
+    <img th:src="@{|/images/${picture.getFileName()}|}" th:alt="${picture.title}" class="pic">
+    <p th:text="${picture.title}"></p>
+    <p><a th:href="@{/}">Strona główna</a></p>
+</div>
+</body>
+</html>

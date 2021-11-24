@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+    <changeSet id="0001" author="javastart">
+        <createTable tableName="company">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(100)"/>
+            <column name="description" type="VARCHAR(1000)"/>
+            <column name="city" type="VARCHAR(100)"/>
+            <column name="employees" type="INT"/>
+            <column name="telephone" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(200)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="0002" author="javastart">
+        <createTable tableName="job_offer">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(100)"/>
+            <column name="description" type="VARCHAR(500)"/>
+            <column name="requirements" type="VARCHAR(1000)"/>
+            <column name="duties" type="VARCHAR(1000)"/>
+            <column name="location" type="VARCHAR(200)"/>
+            <column name="min_salary" type="DOUBLE"/>
+            <column name="max_salary" type="DOUBLE"/>
+            <column name="submissions" type="INT"/>
+            <column name="date_added" type="DATETIME"/>
+            <column name="company_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="job_offer"
+                                 baseColumnNames="company_id"
+                                 constraintName="fk_job_offer_company_id"
+                                 referencedTableName="company"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <include file="../testdata/testdata.sql" relativeToChangelogFile="true"/>
+</databaseChangeLog>

@@ -1,0 +1,21 @@
+body {
+    background-color: lightgray;
+}
+
+header,
+main,
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    color: gray;
+}
+
+.product-icon {
+    color: white;
+    background-color: black;
+    padding: 24px;
+}

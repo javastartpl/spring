@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Promoceny - zbiór najlepszych promocji</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            max-width: 1000px;
+            width: 100%;
+        }
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Promoceny</h1>
+<a href="/add">Dodaj promocję</a>
+<section th:if="${!promotions.isEmpty()}">
+    <p>Poniżej znajdziesz listę najlepszych promocji, dodanych przez naszych użytkowników</p>
+    <table>
+        <thead>
+        <tr>
+            <td>Nazwa produktu</td>
+            <td>Sklep</td>
+            <td>Cena przed obniżką</td>
+            <td>Cena promocyjna</td>
+            <td>Oszczędność</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="promotion: ${promotions}" th:object="${promotion}">
+            <td th:text="*{product}"></td>
+            <td th:text="*{shop}"></td>
+            <td th:text="|*{originalPrice}zł|"></td>
+            <td th:text="|*{discountPrice}zł|"></td>
+            <td th:text="|*{originalPrice - discountPrice}zł|"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<h2 th:if="${promotions.isEmpty()}">Na razie nie ma żadnej promocji :(</h2>
+</body>
+</html>

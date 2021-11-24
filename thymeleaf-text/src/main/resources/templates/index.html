@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Praca z tekstem</title>
+</head>
+<body>
+    <h1>Praca z tekstem</h1>
+    <p th:text="${dangerousCode}">Jakiś tekst</p>
+    <p th:inline="text">Twoje imię: [[${firstName}]]</p>
+    <p th:text="'Twoje imię:' + ${firstName}">Twoje imię; John</p>
+    <p th:text="|Twoje imię i nazwisko: ${firstName} ${lastName} |">Twoje imię i nazwisko: John Doe</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl" th:lang="${lang}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrukcje sterujące</title>
+</head>
+<body>
+    <!-- Jeżeli w kontrolerze nie ustawimy atrybutu person, to wyświelti się poniższy paragraf -->
+    <p th:unless="${person}">Nie przekazano obiektu reprezentującego osobę</p>
+
+    <div th:if="${person}">
+        <div th:switch="${lang}">
+            <h2 th:case="pl">Cześć!</h2>
+            <h2 th:case="es">Hola!</h2>
+            <h2 th:case="de">Hallo!</h2>
+            <h2 th:case="*">Hello!</h2> <!-- Odpowiednik bloku default -->
+        </div>
+        <p>Poniżej znajdują się Twoje informacje.</p>
+        <p th:text="${person.firstName}? 'Imię: ' + ${person.firstName} : 'Brak imienia'">John</p>
+        <p th:text="${person.lastName}? 'Nazwisko: ' + ${person.lastName} : 'Brak nazwiska'">Doe</p>
+        <!--  Wyświetl nagłówek, gdy wartość atrybutu age jest większa bądź równa 18  -->
+        <p th:if="${person.age >= 18}">Pełnoletni</p>
+        <!--  Wyświetl nagłówek, gdy wartość atrybutu age jest mniejsza od 18  -->
+        <p th:unless="${person.age >= 18}">Nieletni</p>
+
+        <!--  Paragraf zostanie wyświetlony tylko wtedy, kiedy w atrybucie person ustawione jest imię i wiek
+    jest większy, bądź równy 18 -->
+        <p th:if="${person.firstName ne null and person.age >= 18}">
+            <span th:text="${person.firstName}">John</span> jest pełnoletni
+        </p>
+    </div>
+
+</body>
+</html>

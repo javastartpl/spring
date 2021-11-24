@@ -1,0 +1,3 @@
+Ten komunikat
+znajduje się w pliku message.txt,
+który jest w głównym katalogu projektu.

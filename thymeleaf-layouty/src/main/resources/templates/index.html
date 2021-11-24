@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Witaj w Skleppiku</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h2>Lista produktów</h2>
+
+    <ul th:remove="all-but-first">
+        <li th:each="product: ${products}">
+            <a href="#"
+               th:href="@{|/product?id=${product.id}|}"
+               th:text="|${product.name} ${product.price}zł|">
+                Telewizor 2499zł
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Radio 999zł
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Smartfon 1799zł
+            </a>
+        </li>
+    </ul>
+</main>
+</body>
+</html>

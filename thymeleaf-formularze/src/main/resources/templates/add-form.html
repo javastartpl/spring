@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Promoceny - dodaj promocję</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>Dodaj promocję</h1>
+<form method="post" action="/save" th:object="${promotion}">
+    <label>
+        Nazwa produktu:
+        <input th:field="*{product}" type="text">
+    </label>
+    <label>
+        Sklep:
+        <input th:field="*{shop}" type="text">
+    </label>
+    <label>
+        Cena:
+        <input th:field="*{originalPrice}" type="number" step="0.01">
+    </label>
+    <label>
+        Cena promocyjna:
+        <input th:field="*{discountPrice}" type="number" step="0.01">
+    </label>
+    <button type="submit">Dodaj</button>
+</form>
+</body>
+</html>

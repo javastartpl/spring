@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Notatnik - strona główna</title>
+    <style>
+        form * {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>Notatnik</h1>
+<form method="post" action="/save">
+    <label>
+        Id notatki:
+        <input name="id" placeholder="np. abc123">
+    </label>
+    <label>
+        Treść:
+        <textarea name="note" placeholder="Zacznij pisać..." rows="5" cols="30"></textarea>
+    </label>
+    <button type="submit">Zapisz</button>
+</form>
+</body>
+</html>

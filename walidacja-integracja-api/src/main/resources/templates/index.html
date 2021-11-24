@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8rem;
+        }
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Javowy Bank</h1>
+<form action="#" method="post" th:action="@{/register}" th:object="${client}">
+    <label>
+        Imię
+        <input type="text" placeholder="Jan" th:field="*{firstName}">
+    </label>
+    <p th:errors="*{firstName}" class="error">Błędy związane z imieniem</p>
+    <label>
+        Nazwisko
+        <input type="text" placeholder="Kowalski" th:field="*{lastName}">
+    </label>
+    <p th:errors="*{lastName}" class="error">Błędy związane z nazwiskiem</p>
+    <label>
+        Email
+        <input type="email" placeholder="twoj@email.com" th:field="*{email}">
+    </label>
+    <p th:errors="*{email}" class="error">Błędny adres email</p>
+    <label>
+        Wiek
+        <input type="number" placeholder="25" th:field="*{age}">
+    </label>
+    <p th:errors="*{age}" class="error">Błędny wiek</p>
+    <button type="submit">Zarejestruj</button>
+</form>
+</body>
+</html>

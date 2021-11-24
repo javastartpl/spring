@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="|${product.name} w Skleppiku|">Telewizor w Skleppiku</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <h2>Informacje o produkcie</h2>
+    <p th:text="|Nazwa: ${product.name}|">Nazwa: Telewizor</p>
+    <p>
+        <i class="fas fa-tv fa-10x product-icon" th:class="|fas fa-10x product-icon fa-${product.icon}|"></i>
+    </p>
+    <p th:text="|Cena: ${product.price}zł|">Cena: 2499zł</p>
+    <p th:text="|Opis: ${product.description}|">
+        Opis: Znakomity telewizor Oled z dźwiękiem przestrzennym i niesamowitymi kolorami
+    </p>
+</main>
+</body>
+</html>

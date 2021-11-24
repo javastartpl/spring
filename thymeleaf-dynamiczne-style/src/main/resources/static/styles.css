@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 600px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.above-avg {
+    color: green;
+}
+
+.below-avg {
+    color: red;
+}
+
+.odd-row {
+    background-color: lightgray;
+}

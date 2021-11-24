@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator</title>
+</head>
+<body>
+<h1>Kalkulator</h1>
+<form action="/calc" method="post">
+  <input type="number" name="a" placeholder="1.23" step=".01">
+  <select name="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" name="b" placeholder="7.89" step=".01">
+  <button type="submit">Oblicz</button>
+</form>
+</body>
+</html>

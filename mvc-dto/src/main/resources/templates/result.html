@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Wynik kalkulacji VAT</title>
+</head>
+<body>
+  <h1>Wynik Twoich obliczeń</h1>
+  <p th:text="'Kwota netto: ' + ${vat.nettoPrice}">Kwota netto: 100zł</p>
+  <p th:text="'Kwota vat: ' + ${vat.vat}">Kwota VAT 23zł</p>
+  <p th:text="'Kwota brutto: ' + ${vat.bruttoPrice}">Kwota brutto: 123zł</p>
+</body>
+</html>

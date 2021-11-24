@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Generator liczb</title>
+</head>
+<body>
+<h1>Generator losowych liczb</h1>
+<h2 th:text="'Wylosowana liczba to: ' + ${randomNumber}"></h2>
+<p>
+  Losowaliśmy liczbę z przedziału
+  <span th:text="${from}"></span> <span th:text="${to}"></span>
+</p>
+</body>
+</html>
