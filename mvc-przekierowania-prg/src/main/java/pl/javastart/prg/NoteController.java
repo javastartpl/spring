@@ -28,7 +28,7 @@ class NoteController {
                     .queryParam("id", id) //dodajemy parametr ?id=XYZ
                     .build().toString();
         } else {
-            return "wrong-data";
+            return "redirect:wrong-data";
         }
     }
 
@@ -37,5 +37,10 @@ class NoteController {
         Optional<Note> note = noteService.findById(id);
         note.ifPresent(n -> model.addAttribute("note", n));
         return "note";
+    }
+
+    @GetMapping("/wrong-data")
+    String wrongData() {
+        return "wrong-data";
     }
 }
