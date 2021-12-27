@@ -6,10 +6,8 @@
 </head>
 <body>
 <h1>Lista osób</h1>
-<ul>
-    <ul th:each="person, status: ${people}">
-        <li th:text="${status.count + '/' + status.size + ' ' + person.firstName + ' ' + person.lastName}"></li>
-    </ul>
+<ul th:each="person, status: ${people}">
+    <li th:text="${status.count + '/' + status.size + ' ' + person.firstName + ' ' + person.lastName}"></li>
 </ul>
 </body>
 </html>
