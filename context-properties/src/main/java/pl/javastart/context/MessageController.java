@@ -74,7 +74,7 @@ class MessageController {
 
         static Optional<Option> fromInt(int number) {
             Option[] options = Option.values();
-            if (number >= 0 && number <= options.length)
+            if (number >= 0 && number < options.length)
                 return Optional.of(Option.values()[number]);
             else
                 return Optional.empty();
