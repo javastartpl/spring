@@ -11,6 +11,7 @@ class User {
     private String password;
     private String email;
     @OneToOne
+    @JoinColumn(name = "user_details_id", unique = true)
     private UserDetails userDetails;
 
     public User() { }
