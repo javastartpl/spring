@@ -11,5 +11,9 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeHttpRequests(requests -> requests.anyRequest().authenticated());
         http.csrf().disable();
         http.formLogin(login -> login.loginPage("/login").permitAll());
+//        http.logout(logout -> logout
+//                .logoutSuccessUrl("/byebye")
+//                .permitAll()
+//        );
     }
 }
