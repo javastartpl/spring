@@ -1,5 +1,5 @@
 INSERT INTO
-    user (first_name, last_name, email, password)
+    application_user (first_name, last_name, email, password)
 VALUES
     -- superadmin@example.com / hard
     ('Jan', 'Kowalski', 'superadmin@example.com', '{bcrypt}$2a$10$Ruu5GtmSVkfLeuGfz/wHUuzflCcMbwJHSBo/.Wui0EM0KIM52Gs2S'),
