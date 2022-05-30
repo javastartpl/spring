@@ -10,7 +10,7 @@ import pl.javastart.sec.message.WelcomeMessageService;
 
 @Controller
 class HomeController {
-    private WelcomeMessageService welcomeMessageService;
+    private final WelcomeMessageService welcomeMessageService;
 
     public HomeController(WelcomeMessageService welcomeMessageService) {
         this.welcomeMessageService = welcomeMessageService;
