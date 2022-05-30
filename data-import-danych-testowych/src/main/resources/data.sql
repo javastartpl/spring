@@ -1,5 +1,5 @@
 INSERT INTO
-    user(first_name, last_name, age)
+    users(first_name, last_name, age)
 VALUES
     ('Jan', 'Kowalski', 22),
     ('Paweł', 'Zawiał', 33),

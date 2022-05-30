@@ -3,6 +3,7 @@ package pl.javastart.onetoone;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
