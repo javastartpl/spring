@@ -1,9 +1,6 @@
 package pl.javastart.library;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 class Book {
@@ -14,6 +11,7 @@ class Book {
     private String author;
     private String publisher;
     private Integer pages;
+    @Column(name = "release_year")
     private Integer year;
 
     public Book() {
