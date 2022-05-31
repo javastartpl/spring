@@ -11,8 +11,8 @@
     <groupId>pl.javastart</groupId>
     <artifactId>urls</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mvc-urls</name>
-    <description>mvc-urls</description>
+    <name>mvc-naturalne-szalbony</name>
+    <description>mvc-naturalne-szalbony</description>
     <properties>
         <java.version>17</java.version>
     </properties>
