@@ -12,7 +12,7 @@ class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(requests -> requests
                 .mvcMatchers("/").permitAll()
-                .mvcMatchers("/secured").hasRole("USER")
+                .mvcMatchers("/secured").hasAnyRole("USER", "ADMIN")
                 .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
         );
