@@ -35,7 +35,7 @@ class ProductRepository {
     }
 
     Product findById(int id) {
-        if (id > products.size() - 1) {
+        if (id > products.size()) {
             return null;
         } else {
             return products.get(id - 1); //identyfikatory liczymy od 1
