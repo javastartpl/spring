@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Optional;
@@ -19,16 +20,21 @@ class NoteController {
     }
 
     @PostMapping("/save")
-    String saveNote(@RequestParam String id, @RequestParam String note) {
+    RedirectView saveNote(@RequestParam String id, @RequestParam String note) {
         Note noteToSave = new Note(id, note);
         boolean saved = noteService.save(noteToSave);
         if (saved) {
-            return UriComponentsBuilder
-                    .fromPath("redirect:note") //ścieżka bazowa
+    //            return UriComponentsBuilder
+    //                    .fromPath("redirect:note") //ścieżka bazowa
+    //                    .queryParam("id", id) //dodajemy parametr ?id=XYZ
+    //                    .build().toString();
+            String redirectUri = UriComponentsBuilder
+                    .fromPath("note") //ścieżka bazowa
                     .queryParam("id", id) //dodajemy parametr ?id=XYZ
                     .build().toString();
+            return new RedirectView(redirectUri, true, false); //zwrócony będzie kod 303, zamiast 302
         } else {
-            return "redirect:wrong-data";
+            return new RedirectView("duplicate", true, false);
         }
     }
 
@@ -39,7 +45,7 @@ class NoteController {
         return "note";
     }
 
-    @GetMapping("/wrong-data")
+    @GetMapping("/duplicate")
     String wrongData() {
         return "wrong-data";
     }
