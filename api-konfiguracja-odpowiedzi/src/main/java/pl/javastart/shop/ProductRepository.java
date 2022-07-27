@@ -11,13 +11,13 @@ class ProductRepository {
 
     public ProductRepository() {
         products.add(
-                new Product(1L, "Mleko", 3.8, new Producer("Mleczex", new Address("Warszawa", "20-222", "Wysoka 20")))
+                new Product(1, "Mleko", 3.8, new Producer("Mleczex", new Address("Warszawa", "20-222", "Wysoka 20")))
         );
         products.add(
-                new Product(2L, "Czekolada mleczna", 4.2, new Producer("Czokoszok", new Address("Wrocław", "50-123", "Kucharska 18")))
+                new Product(2, "Czekolada mleczna", 4.2, new Producer("Czokoszok", new Address("Wrocław", "50-123", "Kucharska 18")))
         );
         products.add(
-                new Product(3L, "Kawa rozpuszczalna", 16.99, new Producer("Kaw-Pol", new Address("Kraków", "10-234", "Niska 33")))
+                new Product(3, "Kawa rozpuszczalna", 16.99, new Producer("Kaw-Pol", new Address("Kraków", "10-234", "Niska 33")))
         );
     }
 
@@ -26,13 +26,9 @@ class ProductRepository {
     }
 
     List<Product> findAllByName(String name) {
-        List<Product> result = new ArrayList<>();
-        for (Product product : products) {
-            if (product.getName().equalsIgnoreCase(name)) {
-                result.add(product);
-            }
-        }
-        return result;
+        return products.stream()
+                .filter(p -> p.getName().equalsIgnoreCase(name))
+                .toList();
     }
 
     Optional<Product> findById(int id) {

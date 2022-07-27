@@ -1,23 +1,23 @@
 package pl.javastart.shop;
 
 class Product {
-    private Long id;
+    private Integer id;
     private String name;
     private Double price;
     private Producer producer;
 
-    public Product(Long id, String name, Double price, Producer producer) {
+    public Product(Integer id, String name, Double price, Producer producer) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.producer = producer;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
