@@ -29,6 +29,7 @@ class JobOfferDtoMapper {
 
     JobOffer map(JobOfferDto dto) {
         JobOffer jobOffer = new JobOffer();
+        jobOffer.setId(dto.getId());
         jobOffer.setTitle(dto.getTitle());
         jobOffer.setDescription(dto.getDescription());
         jobOffer.setRequirements(dto.getRequirements());
