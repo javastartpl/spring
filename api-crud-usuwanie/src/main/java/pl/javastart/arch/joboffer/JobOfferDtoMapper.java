@@ -1,6 +1,7 @@
 package pl.javastart.arch.joboffer;
 
 import org.springframework.stereotype.Service;
+import pl.javastart.arch.company.Company;
 import pl.javastart.arch.company.CompanyRepository;
 
 @Service
@@ -29,6 +30,7 @@ class JobOfferDtoMapper {
 
     JobOffer map(JobOfferDto dto) {
         JobOffer jobOffer = new JobOffer();
+        jobOffer.setId(dto.getId());
         jobOffer.setTitle(dto.getTitle());
         jobOffer.setDescription(dto.getDescription());
         jobOffer.setRequirements(dto.getRequirements());
@@ -36,8 +38,9 @@ class JobOfferDtoMapper {
         jobOffer.setLocation(dto.getLocation());
         jobOffer.setMinSalary(dto.getMinSalary());
         jobOffer.setMaxSalary(dto.getMaxSalary());
-        companyRepository.findById(dto.getCompanyId())
-                .ifPresent(jobOffer::setCompany);
+        jobOffer.setDateAdded(dto.getDateAdded());
+        Company company = companyRepository.findById(dto.getCompanyId()).orElseThrow();
+        jobOffer.setCompany(company);
         return jobOffer;
     }
 }
