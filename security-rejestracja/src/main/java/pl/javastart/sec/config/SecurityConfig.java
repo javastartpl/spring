@@ -15,7 +15,7 @@ class SecurityConfig {
         http.authorizeHttpRequests(requests -> requests
                 .mvcMatchers("/").permitAll()
                 .mvcMatchers("/register", "/confirmation").permitAll()
-                .mvcMatchers("/secured").hasRole("USER")
+                .mvcMatchers("/secured").hasAnyRole("USER", "ADMIN")
                 .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
         );
