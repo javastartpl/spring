@@ -8,13 +8,10 @@ import org.springframework.security.crypto.password.MessageDigestPasswordEncoder
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-
 @Service
 class CustomInMemoryUserDetailsManager extends InMemoryUserDetailsManager {
 
-    @PostConstruct
-    public void initUsers() {
+    public CustomInMemoryUserDetailsManager() {
         User.UserBuilder userBuilder = User.builder();
         //superadmin / hard
         String password1 = "{bcrypt}" + new BCryptPasswordEncoder().encode("hard");

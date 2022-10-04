@@ -5,13 +5,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-
 @Service
 class CustomInMemoryUserDetailsManager extends InMemoryUserDetailsManager {
 
-    @PostConstruct
-    public void initUsers() {
+    public CustomInMemoryUserDetailsManager() {
         User.UserBuilder userBuilder = User.builder();
         UserDetails admin = userBuilder.username("superadmin").password("{noop}hard").roles("ADMIN").build();
         UserDetails user1 = userBuilder.username("john").password("{noop}asdf1234").roles("USER").build();
