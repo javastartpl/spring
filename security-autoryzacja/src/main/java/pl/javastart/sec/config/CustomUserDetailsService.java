@@ -9,10 +9,10 @@ import pl.javastart.sec.user.UserService;
 import pl.javastart.sec.user.dto.UserCredentialsDto;
 
 @Service
-class CustomInMemoryUserDetailsManager implements UserDetailsService {
+class CustomUserDetailsService implements UserDetailsService {
     private final UserService userService;
 
-    public CustomInMemoryUserDetailsManager(UserService userService) {
+    public CustomUserDetailsService(UserService userService) {
         this.userService = userService;
     }
 

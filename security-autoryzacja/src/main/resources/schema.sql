@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS authorities;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS application_user;
+DROP TABLE IF EXISTS user_role;
 
 CREATE TABLE application_user
 (
