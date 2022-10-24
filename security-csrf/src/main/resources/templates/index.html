@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Bezpieczna strona</h1>
+    <img src="../static/img/security-image.jpg" th:src="@{/img/security-image.jpg}"
+         alt="Bezpieczna strona"
+         class="scaled-image"
+    />
+    <a href="#" th:href="@{/secured}">Zabezpieczona strona</a>
+    <a href="#" th:href="@{/admin}">Panel admina</a>
+</div>
+</body>
+</html>
