@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1 th:text="${welcomeMessage}">Hello John!</h1>
-<a sec:authentication="isAuthenticated()"
+<a sec:authorize="isAuthenticated()"
    th:text="|Wyloguj się ${#authentication.name}|"
    th:href="@{/logout}">Wyloguj się John</a>
 </body>
