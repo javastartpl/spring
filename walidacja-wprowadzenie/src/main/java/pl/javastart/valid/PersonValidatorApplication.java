@@ -23,12 +23,7 @@ public class PersonValidatorApplication {
         System.out.println("Dodaję " + person3);
         personService.addPerson(person3); //not ok
 
-        System.out.println("Osoby w bazie " + personService.getPeople().size());
-        for (Person p : personService.getPeople()) {
-            System.out.println(p);
-        }
-
-        context.close();
+        System.out.println(personService);
     }
 
 }

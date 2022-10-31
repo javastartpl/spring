@@ -35,8 +35,13 @@ public class PersonService {
             System.out.println(">Obiekt został dodany");
         }
     }
-    
-    public Set<Person> getPeople() {
-        return this.people;
+
+    @Override
+    public String toString() {
+        String result = "People size " + people.size() + "\n";
+        for (Person person : people) {
+            result = result + person + "\n";
+        }
+        return result;
     }
 }
