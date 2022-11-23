@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Zaloguj się</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}" />
+</head>
+<body>
+<div class="container">
+    <h1 class="login-header">Zarejestruj się</h1>
+    <i class="fa-solid fa-lock fa-10x lock-icon"></i>
+    <form class="login-form" th:action="@{/register}" method="post" th:object="${user}">
+        <input th:field="*{email}" placeholder="Adres Email / Nazwa użytkownika" type="email" class="form-item">
+        <input th:field="*{password}" placeholder="hasło" type="password" class="form-item">
+        <input th:field="*{firstName}" placeholder="Imię" class="form-item">
+        <input th:field="*{lastName}" placeholder="Nazwisko" class="form-item">
+        <button type="submit" class="form-item">Zarejestruj się</button>
+    </form>
+</div>
+</body>
+</html>
