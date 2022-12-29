@@ -1,8 +1,8 @@
 package pl.javastart.bikerent;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import java.time.LocalDate;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDateTime;
 
 @Entity

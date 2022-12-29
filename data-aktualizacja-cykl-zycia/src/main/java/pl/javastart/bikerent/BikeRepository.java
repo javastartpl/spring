@@ -1,8 +1,8 @@
 package pl.javastart.bikerent;
 
+import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
 import java.util.Optional;
 
 @Repository
