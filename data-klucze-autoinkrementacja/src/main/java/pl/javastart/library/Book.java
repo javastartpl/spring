@@ -1,6 +1,6 @@
 package pl.javastart.library;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 class Book {
