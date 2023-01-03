@@ -1,6 +1,6 @@
 package pl.javastart.onetoone;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 class UserDetails {

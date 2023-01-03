@@ -1,6 +1,6 @@
 package pl.javastart.onetomany;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 class ClientOrder {
