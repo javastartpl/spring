@@ -1,4 +1,4 @@
-package pl.javastart.urls;
+package pl.javastart.dynamicstyle;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class WebUrlsApplicationTest {
+class DynamicStyleApplicationTest {
     @Autowired
     MockMvc mockMvc;
 
@@ -25,11 +25,9 @@ class WebUrlsApplicationTest {
         String contentAsString = mockMvc.perform(get("/"))
                 .andExpect(status().is(200))
                 .andReturn().getResponse().getContentAsString();
-        boolean containsGalleryPic = contentAsString.contains("/images/gallery.png");
-        boolean containsMockText = contentAsString.contains("Przykładowe zdjęcie 1");
-        assertAll(
-                () -> assertTrue(containsGalleryPic),
-                () -> assertFalse(containsMockText)
-        );
+        boolean containsMockText = contentAsString.contains("Jan2");
+        boolean containsThAttribute = contentAsString.contains("th:");
+        assertFalse(containsMockText);
+        assertFalse(containsThAttribute);
     }
 }
