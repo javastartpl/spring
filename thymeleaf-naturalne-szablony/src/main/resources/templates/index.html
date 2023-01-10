@@ -10,16 +10,16 @@
     <h1>Galeria zdjęć</h1>
     <img alt="galeria sztuki" th:src="@{/images/gallery.png}" src="../static/images/gallery.png">
 <!--    <p th:each="pic: ${pictures }">-->
-<!--        <a th:href="@{|/pic?id=${pic.id}|}" th:text="${pic.title}" href="#">Przykładowe zdjęcie 1</a>-->
+<!--        <a th:href="@{|/pic?id=${pic.id}|}" th:text="${pic.title}" href="#">przykładowe zdjęcie 1</a>-->
 <!--    </p>-->
 <!--    <p th:remove="all">-->
-<!--        <a href="#">Przykładowe zdjęcie 2</a>-->
+<!--        <a href="#">przykładowe zdjęcie 2</a>-->
 <!--    </p>-->
 <!--    <p th:remove="all">-->
-<!--        <a href="#">Przykładowe zdjęcie 3</a>-->
+<!--        <a href="#">przykładowe zdjęcie 3</a>-->
 <!--    </p>-->
 <!--    <p th:remove="all">-->
-<!--        <a href="#">Przykładowe zdjęcie 4</a>-->
+<!--        <a href="#">przykładowe zdjęcie 4</a>-->
 <!--    </p>-->
     <div th:remove="all-but-first">
         <p th:each="pic: ${pictures }">
