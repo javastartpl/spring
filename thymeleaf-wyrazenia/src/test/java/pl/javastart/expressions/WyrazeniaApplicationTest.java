@@ -1,4 +1,4 @@
-package pl.javastart.loops;
+package pl.javastart.expressions;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class LoopsApplicationTest {
+class WyrazeniaApplicationTest {
     @Autowired
     MockMvc mockMvc;
 
