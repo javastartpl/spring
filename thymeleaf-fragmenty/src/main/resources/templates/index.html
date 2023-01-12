@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head(title='Witaj w Skleppiku')"></head>
+<head th:replace="~{fragments :: head(title='Witaj w Skleppiku')}"></head>
 <body>
-<header th:replace="fragments :: header"></header>
+<header th:replace="~{fragments :: header}"></header>
 <main>
     <h2>Lista produktów</h2>
 
@@ -26,6 +26,6 @@
         </li>
     </ul>
 </main>
-<footer th:replace="fragments :: footer"></footer>
+<footer th:replace="~{fragments :: footer}"></footer>
 </body>
 </html>
