@@ -9,5 +9,4 @@ class MvcSesjeApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
