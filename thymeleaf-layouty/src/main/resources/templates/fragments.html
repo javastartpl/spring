@@ -1,13 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org" >
-<head th:fragment="head">
-    <meta charset="UTF-8">
-    <title th:text="${title}">Witaj w Skleppiku</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">
-</head>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <body>
 <header th:fragment="header">
     <img src="../static/logo.png" th:src="@{/logo.png}" alt="Logo sklepu">

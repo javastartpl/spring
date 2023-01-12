@@ -25,7 +25,7 @@ class FragmentsApplicationTest {
     void shouldProcessHomepageTemplate() throws Exception {
         MvcResult homepage = mockMvc.perform(get("/")).andReturn();
         String homepageHtml = homepage.getResponse().getContentAsString();
-        assertFalse(homepageHtml.contains("th:replace"));
-        assertTrue(homepageHtml.contains("<title>Witaj w Skleppiku</title>"));
+        assertFalse(homepageHtml.contains("layout:"));
+        assertTrue(homepageHtml.contains("<title>Strona główna - Skleppik</title>"));
     }
 }

@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head th:fragment="head">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
     <meta charset="UTF-8">
-    <title>Layout title</title>
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Skleppik</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">
 </head>
 <body>
-<header th:fragment="header">
-    <img src="../static/logo.png" th:src="@{/logo.png}" alt="Logo sklepu">
-    <p>Bezpieczne i pewne zakupy.</p>
-</header>
+<header th:replace="~{fragments :: header}"></header>
 
 <main layout:fragment="content">
 </main>
 
-<footer th:fragment="footer">
-    <p class="footer">Skleppik - all rights reserved</p>
-</footer>
+<footer th:replace="~{fragments :: footer}"></footer>
 </body>
 </html>
