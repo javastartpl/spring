@@ -2,7 +2,7 @@ package pl.javastart.arch.company;
 
 import pl.javastart.arch.joboffer.JobOffer;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
