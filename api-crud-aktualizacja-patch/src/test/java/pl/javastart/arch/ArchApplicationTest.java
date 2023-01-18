@@ -91,4 +91,23 @@ class ArchApplicationTest {
                         jsonPath("name", is("Appel"))
                 );
     }
+
+    @Test
+    void shouldPartiallyUpdateOffer() throws Exception {
+        String patch = """
+                {
+                    "title": "Super Developer",
+                    "minSalary": 15000.0,
+                    "maxSalary": 20000.0
+                }""";
+        mockMvc.perform(patch("/offers/2").content(patch).contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent());
+        mockMvc.perform(get("/offers/2").accept(MediaType.APPLICATION_JSON))
+                .andExpectAll(
+                        status().isOk(),
+                        jsonPath("title", is("Super Developer")),
+                        jsonPath("minSalary", is(15000.0)),
+                        jsonPath("maxSalary", is(20000.0))
+                );
+    }
 }
