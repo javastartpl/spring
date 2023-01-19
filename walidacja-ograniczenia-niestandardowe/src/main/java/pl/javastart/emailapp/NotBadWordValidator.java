@@ -2,8 +2,8 @@ package pl.javastart.emailapp;
 
 import java.util.Arrays;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 class NotBadWordValidator implements ConstraintValidator<NotBadWord, String> {
 
