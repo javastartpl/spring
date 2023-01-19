@@ -1,6 +1,6 @@
 package pl.javastart.validation;
 
-import javax.validation.constraints.*;
+import jakarta.validation.constraints.*;
 
 class ClientDto {
     @NotNull
