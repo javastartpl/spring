@@ -1,7 +1,7 @@
 package pl.javastart.wholesaler.constraint;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class SerialNoValidator implements ConstraintValidator<SerialNo, String> {
     private String startsWith;

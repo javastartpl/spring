@@ -6,8 +6,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import pl.javastart.wholesaler.model.Equipment;
 import pl.javastart.wholesaler.model.Product;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import java.util.Set;
 
 @SpringBootApplication
