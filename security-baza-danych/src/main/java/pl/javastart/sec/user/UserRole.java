@@ -1,6 +1,6 @@
 package pl.javastart.sec.user;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user_role")
