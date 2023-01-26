@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl"
-      th:lang="${#request.getParameter('lang') ne null? #request.getParameter('lang') : 'en'}"
+      th:lang="${lang}"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
@@ -9,12 +9,12 @@
 </head>
 <body>
     <h1 th:text="${welcomeMessage}">Hello John!</h1>
-    <!--Wersja 1-->
-    <!--<a th:if="${#authentication.isAuthenticated()}"-->
-    <!--   th:text="|Wyloguj się ${#authentication.name}|"-->
-    <!--   th:href="@{/logout}">Wyloguj się John</a>-->
+<!-- Wersja z th:if -->
+<!--    <a th:if="${#authentication.isAuthenticated()}"-->
+<!--       th:text="|Wyloguj się ${#authentication.name}|"-->
+<!--       th:href="@{/logout}">Wyloguj się John</a>-->
 
-    <!--Wersja 2 z sec:authorize-->
+<!-- Wersja z sec:authorize -->
     <a sec:authorize="isAuthenticated()"
        th:text="|Wyloguj się ${#authentication.name}|"
        th:href="@{/logout}">Wyloguj się John</a>
