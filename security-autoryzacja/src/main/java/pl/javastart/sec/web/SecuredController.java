@@ -17,6 +17,7 @@ class SecuredController {
     @GetMapping("/secured")
     String home(@RequestParam(defaultValue = "en") String lang, Model model) {
         String welcomeMessage = welcomeMessageService.getWelcomeMessage(lang);
+        model.addAttribute("lang", lang);
         model.addAttribute("welcomeMessage", welcomeMessage);
         return "secured";
     }
