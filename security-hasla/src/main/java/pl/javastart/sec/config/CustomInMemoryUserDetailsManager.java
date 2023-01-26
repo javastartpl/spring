@@ -24,7 +24,8 @@ class CustomInMemoryUserDetailsManager extends InMemoryUserDetailsManager {
         UserDetails user1 = userBuilder.username("john").password(password2).roles("USER").build();
 
         //java_lover / javaiscool
-        String password3 = "{argon2}" + new Argon2PasswordEncoder().encode("javaiscool");
+
+        String password3 = "{argon2}" + Argon2PasswordEncoder.defaultsForSpringSecurity_v5_8().encode("javaiscool");
         System.out.println(password3);
         UserDetails user2 = userBuilder.username("java_lover").password(password3).roles("USER").build();
 
