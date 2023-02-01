@@ -16,12 +16,12 @@ class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         PathRequest.H2ConsoleRequestMatcher h2ConsoleRequestMatcher = PathRequest.toH2Console();
         http.authorizeHttpRequests(requests -> requests
-                .mvcMatchers("/").permitAll()
+                .requestMatchers("/").permitAll()
                 .requestMatchers(h2ConsoleRequestMatcher).permitAll()
-                .mvcMatchers("/img/**", "/styles/**").permitAll()
-                .mvcMatchers("/register", "/confirmation").permitAll()
-                .mvcMatchers("/secured", "/change-password").hasAnyRole("USER", "ADMIN")
-                .mvcMatchers("/admin/**").hasRole("ADMIN")
+                .requestMatchers("/img/**", "/styles/**").permitAll()
+                .requestMatchers("/register", "/confirmation").permitAll()
+                .requestMatchers("/secured", "/change-password").hasAnyRole("USER", "ADMIN")
+                .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
         );
         http.formLogin(login -> login.loginPage("/login").permitAll());
