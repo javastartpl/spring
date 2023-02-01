@@ -3,7 +3,7 @@ package pl.javastart.sec.user;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "application_user")
