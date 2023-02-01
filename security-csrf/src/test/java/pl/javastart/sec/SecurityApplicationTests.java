@@ -81,36 +81,6 @@ class SecurityApplicationTests {
         ).andExpect(redirectedUrl("/confirmation"));
     }
 
-//    @Test
-//    void shouldNotRegisterWithoutCsrf() throws Exception {
-//        mockMvc.perform(post("/register")
-//                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-//                .param("email", "asdf@example.com")
-//                .param("password", "abc")
-//                .param("firstName", "John")
-//                .param("lastName", "Doe")
-//        ).andExpect(redirectedUrl("/login"));
-//    }
-//
-//    @Test
-//    void shouldNotRegisterWithoutCsrfRT() throws Exception {
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-//
-//        MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-//        map.add("email", "asdf@example.com");
-//        map.add("password", "abc");
-//        map.add("firstName", "John");
-//        map.add("lastName", "Doe");
-//
-//        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
-//
-//        RestTemplate restTemplate = new RestTemplate();
-//        ResponseEntity<String> response = restTemplate.postForEntity(URI.create("http://localhost:8080/register"), request, String.class);
-//        HttpStatusCode statusCode = response.getStatusCode();
-//        assertEquals(HttpStatus.FOUND, statusCode);
-//    }
-
     @Test
     void shouldNotChangePasswordWithoutCsrf() throws Exception {
         mockMvc.perform(post("/change-password")
