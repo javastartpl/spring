@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl"
-      th:lang="${#request.getParameter('lang') ne null? #request.getParameter('lang') : 'en'}"
+      th:lang="${lang}"
       xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Strona główna</title>
+    <title>Panel użytkownika</title>
 </head>
 <body>
 <h1 th:text="${welcomeMessage}">Hello John!</h1>
