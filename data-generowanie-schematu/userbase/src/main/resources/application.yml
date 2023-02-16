@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+# Pliku schema.sql u?ywaj tylko w po??czeniu ddl-auto=validate
