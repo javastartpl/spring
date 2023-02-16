@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Eclipse" />
+  </component>
+  <component name="EclipseCompilerSettings">
+    <option name="ECJ_TOOL_PATH" value="$USER_HOME$/eclipse_compiler/ecj-I20230129-1800.jar" />
+  </component>
+</project>
