@@ -5,3 +5,6 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: true
+  sql:
+    init:
+      data-locations: classpath:test-data/*.sql
