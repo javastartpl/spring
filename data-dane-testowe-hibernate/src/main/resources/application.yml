@@ -6,6 +6,10 @@ spring:
       ddl-auto: create-drop
     show-sql: true
     properties:
+#      jakarta:
+#        persistence:
+#          sql-load-script-source: users.sql, addresses.sql
       hibernate:
         hbm2ddl:
           import_files_sql_extractor: org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor
+          import_files: users.sql, addresses.sql
