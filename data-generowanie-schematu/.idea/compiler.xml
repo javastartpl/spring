@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Eclipse" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="userbase" />
+      </profile>
+    </annotationProcessing>
   </component>
   <component name="EclipseCompilerSettings">
     <option name="ECJ_TOOL_PATH" value="$USER_HOME$/eclipse_compiler/ecj-I20230129-1800.jar" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="userbase" options="-parameters" />
+    </option>
   </component>
 </project>

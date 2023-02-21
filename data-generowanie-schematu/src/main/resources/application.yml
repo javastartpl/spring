@@ -3,6 +3,6 @@ spring:
     url: jdbc:h2:mem:test
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     show-sql: true
-# Pliku schema.sql u?ywaj tylko w po??czeniu ddl-auto=validate
+# Pliku schema.sql używaj tylko w połączeniu ddl-auto=validate
