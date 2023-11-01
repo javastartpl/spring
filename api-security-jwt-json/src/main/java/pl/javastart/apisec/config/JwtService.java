@@ -53,7 +53,10 @@ class JwtService {
 
     void verifySignature(SignedJWT signedJWT) {
         try {
-            signedJWT.verify(verifier);
+            boolean verified = signedJWT.verify(verifier);
+            if (!verified) {
+                throw new JwtAuthenticationException("JWT verification failed for token %s".formatted(signedJWT.serialize()));
+            }
         } catch (JOSEException e) {
             throw new JwtAuthenticationException("JWT verification failed for token %s".formatted(signedJWT.serialize()));
         }
