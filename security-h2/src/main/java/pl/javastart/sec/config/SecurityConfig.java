@@ -30,7 +30,11 @@ class SecurityConfig {
                         .logoutSuccessUrl("/")
         );
         http.csrf(csrf -> csrf.ignoringRequestMatchers(h2ConsoleRequestMatcher));
-        http.headers().frameOptions().sameOrigin();
+        http.headers(
+                config -> config.frameOptions(
+                        options -> options.sameOrigin()
+                )
+        );
         return http.build();
     }
 

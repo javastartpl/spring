@@ -33,6 +33,6 @@ class CsrfTest {
                 .body(BodyInserters.fromFormData(params))
                 .exchange()
                 .expectStatus().isFound()
-                .expectHeader().valueMatches("location", "http://localhost:[0-9]{5}/login.*");
+                .expectHeader().valueMatches("location", "http://localhost:[0-9]{4,5}/login.*");
     }
 }
